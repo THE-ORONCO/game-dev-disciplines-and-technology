@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ke4l7ml5lurv"]
+
+[ext_resource type="Script" uid="uid://va85jd1hkyiu" path="res://scripts/house.gd" id="1_0lo8x"]
+[ext_resource type="Texture2D" uid="uid://bsqk8yvdhydq0" path="res://assets/Packs/Sunnyland/environment/Props/house.png" id="2_b4xur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv0cw"]
+size = Vector2(14.5, 19)
+
+[node name="House" type="Area2D" unique_id=806654381]
+script = ExtResource("1_0lo8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1950466957]
+z_index = -1
+position = Vector2(0, 8)
+scale = Vector2(0.683908, 0.62037)
+texture = ExtResource("2_b4xur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1531792704]
+position = Vector2(-6, 31)
+shape = SubResource("RectangleShape2D_nv0cw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

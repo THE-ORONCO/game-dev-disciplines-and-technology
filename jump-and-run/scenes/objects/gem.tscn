@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://d222ixw20wkcp"]
+
+[ext_resource type="Script" uid="uid://bqluon3yomvus" path="res://scripts/gem.gd" id="1_640a5"]
+[ext_resource type="Texture2D" uid="uid://cdf81lywklqsl" path="res://assets/Packs/Sunnyland/sprites/gem/gem-1.png" id="2_b38ql"]
+[ext_resource type="Texture2D" uid="uid://cpfnrc2m1yeh" path="res://assets/Packs/Sunnyland/sprites/gem/gem-2.png" id="3_3843u"]
+[ext_resource type="Texture2D" uid="uid://do76mliavn6bl" path="res://assets/Packs/Sunnyland/sprites/gem/gem-3.png" id="4_hs7fn"]
+[ext_resource type="Texture2D" uid="uid://tsb57r0hhf7a" path="res://assets/Packs/Sunnyland/sprites/gem/gem-4.png" id="5_4wb7y"]
+[ext_resource type="Texture2D" uid="uid://ubkpqr73x4v2" path="res://assets/Packs/Sunnyland/sprites/gem/gem-5.png" id="6_ox3xm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv0cw"]
+size = Vector2(9, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tusrk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b38ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3843u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hs7fn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4wb7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ox3xm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Gem" type="Area2D" unique_id=1608926018]
+collision_layer = 16
+script = ExtResource("1_640a5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=830147555]
+shape = SubResource("RectangleShape2D_nv0cw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=416427050]
+sprite_frames = SubResource("SpriteFrames_tusrk")
+autoplay = "default"
+frame_progress = 0.437253
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://ms4ay14kcser"]
+
+[ext_resource type="Script" uid="uid://b2jek642rug53" path="res://scripts/frog.gd" id="1_gahv6"]
+[ext_resource type="Texture2D" uid="uid://vg34hbo2ihbx" path="res://assets/Packs/Sunnyland/sprites/enemy-death/enemy-death-1.png" id="2_084fo"]
+[ext_resource type="Texture2D" uid="uid://b4b65e3b480h3" path="res://assets/Packs/Sunnyland/sprites/enemy-death/enemy-death-2.png" id="3_ufc7t"]
+[ext_resource type="Texture2D" uid="uid://dvs3cyw4bedch" path="res://assets/Packs/Sunnyland/sprites/enemy-death/enemy-death-3.png" id="4_ypx4b"]
+[ext_resource type="Texture2D" uid="uid://bo321y3xa4bid" path="res://assets/Packs/Sunnyland/sprites/enemy-death/enemy-death-4.png" id="5_hccm7"]
+[ext_resource type="Texture2D" uid="uid://dp1enwbaaxupm" path="res://assets/Packs/Sunnyland/sprites/enemy-death/enemy-death-5.png" id="6_kdrpi"]
+[ext_resource type="Texture2D" uid="uid://b3wqpnmdibamq" path="res://assets/Packs/Sunnyland/sprites/enemy-death/enemy-death-6.png" id="7_3oio4"]
+[ext_resource type="Texture2D" uid="uid://bh7r22gf3pu37" path="res://assets/Packs/Sunnyland/sprites/frog/idle/frog-idle-1.png" id="8_7iyg4"]
+[ext_resource type="Texture2D" uid="uid://4ri2wc1wypcn" path="res://assets/Packs/Sunnyland/sprites/frog/idle/frog-idle-2.png" id="9_wdh6o"]
+[ext_resource type="Texture2D" uid="uid://dkkiqsmu1hsek" path="res://assets/Packs/Sunnyland/sprites/frog/idle/frog-idle-3.png" id="10_utmae"]
+[ext_resource type="Texture2D" uid="uid://ksulqa78xkdh" path="res://assets/Packs/Sunnyland/sprites/frog/idle/frog-idle-4.png" id="11_bhhng"]
+[ext_resource type="Texture2D" uid="uid://c2rvho8lrvur2" path="res://assets/Packs/Sunnyland/sprites/frog/jump/frog-jump-1.png" id="12_soypv"]
+[ext_resource type="Texture2D" uid="uid://bymnidxmc3cjy" path="res://assets/Packs/Sunnyland/sprites/frog/jump/frog-jump-2.png" id="13_yowll"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jywa8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_084fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ufc7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ypx4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hccm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kdrpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3oio4")
+}],
+"loop": false,
+"name": &"death",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_7iyg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wdh6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_utmae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bhhng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7iyg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7iyg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7iyg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7iyg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7iyg4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_soypv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yowll")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv2ep"]
+size = Vector2(26, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xowna"]
+size = Vector2(34, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4yr7"]
+radius = 134.034
+
+[node name="Frog" type="CharacterBody2D" unique_id=103900055 groups=["enemy"]]
+collision_layer = 4
+collision_mask = 50
+script = ExtResource("1_gahv6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1763618029]
+sprite_frames = SubResource("SpriteFrames_jywa8")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=829144205]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_cv2ep")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1502968567]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1167761175]
+position = Vector2(-1, 7)
+shape = SubResource("RectangleShape2D_xowna")
+debug_color = Color(0.83082235, 0.29050446, 0.67353415, 0.41960785)
+
+[node name="PlayerDetectionRadius" type="Area2D" parent="." unique_id=531683250]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionRadius" unique_id=1697209486]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_p4yr7")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="body_entered" from="PlayerDetectionRadius" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetectionRadius" to="." method="_on_player_detection_body_exited"]

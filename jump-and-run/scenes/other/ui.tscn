@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://l6kaej54ryn5"]
+
+[ext_resource type="Script" uid="uid://dibtf1u85v85a" path="res://scripts/ui_update.gd" id="1_5415t"]
+
+[node name="UI" type="CanvasLayer" unique_id=2025203005]
+
+[node name="HP" type="Label" parent="." unique_id=849307889]
+offset_left = 23.0
+offset_top = 6.0
+offset_right = 72.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "HP"
+script = ExtResource("1_5415t")
+
+[node name="Score" type="Label" parent="." unique_id=381603378]
+offset_left = 22.0
+offset_top = 55.0
+offset_right = 71.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Score"
+script = ExtResource("1_5415t")
+
+[node name="Timeout" type="Label" parent="." unique_id=1102793670]
+visible = false
+offset_left = 22.0
+offset_top = 106.0
+offset_right = 118.0
+offset_bottom = 156.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Timeout!"
+script = ExtResource("1_5415t")

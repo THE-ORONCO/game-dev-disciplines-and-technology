@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dfyat7gc8rsrw"]
+
+[ext_resource type="Texture2D" uid="uid://b1q4gqudmhjyu" path="res://assets/Packs/Sunnyland/environment/Props/pine.png" id="1_r6wkp"]
+
+[node name="Tree" type="Sprite2D" unique_id=1343715089]
+position = Vector2(0, -8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_r6wkp")

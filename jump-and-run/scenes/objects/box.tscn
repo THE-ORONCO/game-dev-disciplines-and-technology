@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cmxoipjtj0txv"]
+
+[ext_resource type="Texture2D" uid="uid://b8u7kw62uindl" path="res://assets/Packs/Sunnyland/environment/Props/block.png" id="1_3inec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks2v0"]
+size = Vector2(16, 16)
+
+[node name="Box" type="RigidBody2D" unique_id=1206259608 groups=["box"]]
+collision_layer = 32
+collision_mask = 34
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=459941811]
+scale = Vector2(2, 2)
+texture = ExtResource("1_3inec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=640012342]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_ks2v0")

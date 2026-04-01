@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b8n2sl2ah2siu"]
+
+[ext_resource type="PackedScene" path="res://ping-pong/game.tscn" id="2_6t3td"]
+
+[node name="Train" type="Node3D" unique_id=662430241]
+
+[node name="Game" parent="." unique_id=928428181 instance=ExtResource("2_6t3td")]
+
+[node name="Game2" parent="." unique_id=1355190557 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
+
+[node name="Game3" parent="." unique_id=236988416 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+
+[node name="Game4" parent="." unique_id=1624811970 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 11)
+
+[node name="Game5" parent="." unique_id=128556149 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22)
+
+[node name="Game6" parent="." unique_id=1767793508 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -22)
+
+[node name="Game7" parent="." unique_id=1589064938 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11)
+
+[node name="Game8" parent="." unique_id=1473907119 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -11)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1744142057]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.6, 29.9374, -4.69021)
+current = true

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c8xwhfvqmdlib"]
+
+[ext_resource type="PackedScene" uid="uid://l6kaej54ryn5" path="res://scenes/other/ui.tscn" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://jrswwseexbcq" path="res://scenes/other/player.tscn" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://qa4fpdlgk244" path="res://scenes/level/hit_mobs.tscn" id="3_lnu2h"]
+
+[node name="Game" type="Node2D" unique_id=2088956691]
+
+[node name="UI" parent="." unique_id=2025203005 instance=ExtResource("1_lnu2h")]
+
+[node name="Player" parent="." unique_id=967790594 instance=ExtResource("2_lbhrr")]
+position = Vector2(480, 274)
+
+[node name="CurrentLevel" type="Node" parent="." unique_id=985052272]
+
+[node name="HitMobs" parent="CurrentLevel" unique_id=1413975202 instance=ExtResource("3_lnu2h")]

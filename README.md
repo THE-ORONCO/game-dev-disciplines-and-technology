@@ -10,3 +10,7 @@ uv sync
 .venv/Scripts/activate
 ```
 
+# TODO
+- [x] setup project
+- [ ] follow tutorial https://github.com/edbeeching/godot_rl_agents/blob/main/docs/CUSTOM_ENV.md
+- [ ] add RL to 2D jump and run project 

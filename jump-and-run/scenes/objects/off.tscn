@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dx24ceevf5r0f"]
+
+[ext_resource type="Script" uid="uid://blyksi85216db" path="res://scripts/off.gd" id="1_466b0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c67uw"]
+size = Vector2(936, 67)
+
+[node name="Off" type="Area2D" unique_id=596529801]
+collision_layer = 8
+script = ExtResource("1_466b0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1383648139]
+shape = SubResource("RectangleShape2D_c67uw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
