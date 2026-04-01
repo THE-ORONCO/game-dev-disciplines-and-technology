@@ -20,7 +20,7 @@ project/assembly_name="game dev diciplines & technology"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_rl_agents/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_rl_agents/plugin.cfg", "res://addons/rider-plugin/plugin.cfg")
 
 [physics]
 
