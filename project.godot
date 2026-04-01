@@ -22,6 +22,15 @@ project/assembly_name="game dev diciplines & technology"
 
 enabled=PackedStringArray("res://addons/godot_rl_agents/plugin.cfg", "res://addons/rider-plugin/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://addons/": "yellow",
+"res://script_templates/": "gray",
+"res://scripts/": "gray",
+"res://sync/": "gray"
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
