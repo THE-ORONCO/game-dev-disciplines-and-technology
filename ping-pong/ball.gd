@@ -1,3 +1,4 @@
+class_name Ball
 extends RigidBody3D
 
 @export var speed := 2.0

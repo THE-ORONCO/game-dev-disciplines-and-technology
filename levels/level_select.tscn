@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bqepiy76r5uaw" path="res://ping-pong/game.tscn" id="2_f7cvi"]
 [ext_resource type="Script" uid="uid://bbht6w85ych56" path="res://levels/load_level_button.gd" id="2_ygvyp"]
 [ext_resource type="PackedScene" uid="uid://c8xwhfvqmdlib" path="res://jump-and-run/scenes/other/game.tscn" id="3_je4e8"]
+[ext_resource type="PackedScene" uid="uid://b8n2sl2ah2siu" path="res://ping-pong/train.tscn" id="3_qtfbl"]
 
 [node name="LevelSelect" type="Control" unique_id=1854956135]
 layout_mode = 3
@@ -35,6 +36,12 @@ text = "start: Ping-Pong"
 script = ExtResource("2_ygvyp")
 scene = ExtResource("2_f7cvi")
 
+[node name="traint_ping_pong" type="Button" parent="MarginContainer/VBoxContainer" unique_id=36809297]
+layout_mode = 2
+text = "train: Ping-Pong"
+script = ExtResource("2_ygvyp")
+scene = ExtResource("3_qtfbl")
+
 [node name="start_jump_run" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1070278665]
 layout_mode = 2
 text = "start: Jump Run"
@@ -42,4 +49,5 @@ script = ExtResource("2_ygvyp")
 scene = ExtResource("3_je4e8")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/start_ping_pong" to="." method="_on_start_ping_pong_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/traint_ping_pong" to="." method="_on_start_ping_pong_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/start_jump_run" to="." method="_on_start_jump_run_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://dvcu775n18kyr"]
+[gd_scene format=3 uid="uid://bqixkr37wikjx"]
 
 [ext_resource type="Script" uid="uid://c1ns72o11k1r0" path="res://ping-pong/Player.gd" id="1_wnmni"]
+[ext_resource type="Script" uid="uid://c3mx04ito26k8" path="res://ping-pong/tutorial_ai_controller_3D.gd" id="3_jy1cn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_f8u8m"]
 size = Vector3(2, 0.1, 0.1)
@@ -11,23 +12,29 @@ size = Vector3(2, 0.1, 0.1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_icghh"]
 size = Vector3(2.1, 0.15, 0.15)
 
-[node name="Player" type="Node3D"]
+[node name="Player" type="Node3D" unique_id=1062714606]
 script = ExtResource("1_wnmni")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1169178014]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
 mesh = SubResource("BoxMesh_f8u8m")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=554313110]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1579434706]
 shape = SubResource("BoxShape3D_t8373")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=1421724082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1955431314]
 shape = SubResource("BoxShape3D_icghh")
+
+[node name="AI" type="Node3D" parent="." unique_id=2139757876 node_paths=PackedStringArray("player") groups=["AGENT"]]
+unique_name_in_owner = true
+script = ExtResource("3_jy1cn")
+player = NodePath("..")
+metadata/_custom_type_script = "uid://c3mx04ito26k8"
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

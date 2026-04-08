@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8n2sl2ah2siu"]
 
-[ext_resource type="PackedScene" path="res://ping-pong/game.tscn" id="2_6t3td"]
+[ext_resource type="PackedScene" uid="uid://bqepiy76r5uaw" path="res://ping-pong/game.tscn" id="2_6t3td"]
+[ext_resource type="Script" uid="uid://cecwd02nv3ery" path="res://addons/godot_rl_agents/sync.gd" id="2_8p1ye"]
 
 [node name="Train" type="Node3D" unique_id=662430241]
 
@@ -30,3 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -11)
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1744142057]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.6, 29.9374, -4.69021)
 current = true
+
+[node name="Sync" type="Node" parent="." unique_id=982210586]
+script = ExtResource("2_8p1ye")
+metadata/_custom_type_script = "uid://cecwd02nv3ery"

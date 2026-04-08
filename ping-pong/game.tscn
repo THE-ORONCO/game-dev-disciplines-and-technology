@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6t103lbwm1qa" path="res://ping-pong/game.gd" id="1_2us7j"]
 [ext_resource type="Texture2D" uid="uid://df34a0hiq32m4" path="res://ping-pong/assets/peppermint_powerplant_2_1k.hdr" id="1_jqclb"]
-[ext_resource type="PackedScene" path="res://ping-pong/player.tscn" id="3_4cer5"]
+[ext_resource type="PackedScene" uid="uid://bqixkr37wikjx" path="res://ping-pong/player.tscn" id="3_4cer5"]
 [ext_resource type="Script" uid="uid://2ech2bvgjdtp" path="res://ping-pong/ball.gd" id="4_1kvpt"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r6kij"]
@@ -63,7 +63,8 @@ environment = SubResource("Environment_h5lwx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.156479, -0.0976146, -0.0119491)
 mesh = SubResource("BoxMesh_081ux")
 
-[node name="Player" parent="." unique_id=228839794 instance=ExtResource("3_4cer5")]
+[node name="Player" parent="." unique_id=228839794 node_paths=PackedStringArray("ball") instance=ExtResource("3_4cer5")]
+ball = NodePath("../Ball")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1892861452]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 0)
