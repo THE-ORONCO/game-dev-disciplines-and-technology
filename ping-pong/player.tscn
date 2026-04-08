@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqixkr37wikjx"]
 
 [ext_resource type="Script" uid="uid://c1ns72o11k1r0" path="res://ping-pong/Player.gd" id="1_wnmni"]
+[ext_resource type="Script" uid="uid://cfyfmgcabkopf" path="res://addons/godot_rl_agents/sensors/sensors_3d/RaycastSensor3D.gd" id="2_74pi8"]
 [ext_resource type="Script" uid="uid://c3mx04ito26k8" path="res://ping-pong/tutorial_ai_controller_3D.gd" id="3_jy1cn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_f8u8m"]
@@ -24,6 +25,118 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1579434706]
 shape = SubResource("BoxShape3D_t8373")
+
+[node name="sensor" type="Node3D" parent="StaticBody3D" unique_id=975196290]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 1.3618884)
+script = ExtResource("2_74pi8")
+collision_mask = 2
+boolean_class_mask = 0
+n_rays_width = 20.0
+n_rays_height = 1.0
+cone_width = 90.0
+collide_with_areas = true
+metadata/_custom_type_script = "uid://cfyfmgcabkopf"
+
+[node name="node_0_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=62765513]
+target_position = Vector3(-6.7880073, 0, 7.343225)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_1_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=605744095]
+target_position = Vector3(-6.1909394, 0, 7.8531694)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_2_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=1107591503]
+target_position = Vector3(-5.555702, 0, 8.314696)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="@RayCast3D@38384" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=836437347]
+target_position = Vector3(-4.8862123, 0, 8.72496)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="@RayCast3D@38385" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=1784757590]
+target_position = Vector3(-4.1865973, 0, 9.081431)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_5_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=2115297853]
+target_position = Vector3(-3.4611707, 0, 9.381913)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_6_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=882542637]
+target_position = Vector3(-2.7144046, 0, 9.624553)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_7_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=14971345]
+target_position = Vector3(-1.9509032, 0, 9.807853)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_8_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=1392123865]
+target_position = Vector3(-1.175374, 0, 9.930685)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_9_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=115274583]
+target_position = Vector3(-0.39259815, 0, 9.9922905)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_10_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=1957028383]
+target_position = Vector3(0.39259815, 0, 9.9922905)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_11_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=1161912335]
+target_position = Vector3(1.175374, 0, 9.930685)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_12_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=578052665]
+target_position = Vector3(1.9509032, 0, 9.807853)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_13_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=1219117851]
+target_position = Vector3(2.7144046, 0, 9.624553)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_14_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=1550984481]
+target_position = Vector3(3.4611707, 0, 9.381913)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_15_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=94609516]
+target_position = Vector3(4.1865973, 0, 9.081431)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_16_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=259676559]
+target_position = Vector3(4.8862123, 0, 8.72496)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_17_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=88456636]
+target_position = Vector3(5.555702, 0, 8.314696)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_18_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=1963313723]
+target_position = Vector3(6.1909394, 0, 7.8531694)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="node_19_0 0_0" type="RayCast3D" parent="StaticBody3D/sensor" unique_id=658997968]
+target_position = Vector3(6.7880073, 0, 7.343225)
+collision_mask = 2
+collide_with_areas = true
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1421724082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)

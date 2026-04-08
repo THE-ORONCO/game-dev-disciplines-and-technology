@@ -51,6 +51,11 @@ rotate_clockwise={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="player"
+3d_physics/layer_2="ball"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

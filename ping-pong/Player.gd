@@ -4,6 +4,8 @@ extends Node3D
 @export var rotation_speed = 3.0
 @export var ball:Ball
 @onready var ai_controller := %AI
+@onready var sensor: RayCastSensor3D = %sensor
+
 var needs_reset = false
 
 func _ready():
